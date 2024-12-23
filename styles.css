@@ -1,0 +1,219 @@
+  /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a8e063, #56ab2f);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.header-right-logo {
+    height: 50px;
+    width: auto;
+    margin-left: 10px;
+    object-fit: contain;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    position: fixed;
+    top: 80px; /* Account for the header height */
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+nav {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+nav h2 {
+    margin-bottom: 15px;
+}
+
+nav select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Upload Section */
+.upload-section {
+    width: 100%;
+    text-align: center;
+}
+
+.upload-box {
+    width: 40%;
+    margin: 20px auto;
+    padding: 50px;
+    border: 2px dashed #56ab2f;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.upload-box h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.upload-box p {
+    color: #888;
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* Table Section */
+.table-section {
+    position: absolute;
+    top: 200px; /* Adjust to position below fixed elements */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Allow columns to adjust dynamically */
+}
+
+table tr:nth-child(even) {
+    background-color: #eef6ee;
+}
+
+table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #56ab2f;
+    color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+}
+
+table td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+    white-space: nowrap; /* Prevent wrapping for dynamic adjustment */
+    background-color: #f9f9f9;
+}
+
+table td input {
+    border: none;
+    background: none;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't overflow the cell */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Save Button */
+#saveButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 20px;
+    background-color: #56ab2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#saveButton:hover {
+    background-color: #3d8b1e;
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+        height: auto;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .upload-box {
+        width: 90%;
+    }
+}

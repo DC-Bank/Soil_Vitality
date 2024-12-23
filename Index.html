@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Vitality</title>
+	 <link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+   <header>
+        <div class="header-container">
+            <img src="C:/Users/dcvan/Desktop/Soil_Vitality/Title.png" alt="Logo" class="header-logo">
+            <img src="C:/Users/dcvan/Desktop/Soil_Vitality/Rootbot.png" alt="Top Right Logo" class="header-right-logo">
+        </div>
+    </header>
+    <div class="container">
+        <nav>
+            <h2>Clients</h2>
+            <select>
+                <option value="">Select Serial Number</option>
+                <option value="1">Client 001</option>
+                <option value="2">Client 002</option>
+                <option value="3">Client 003</option>
+            </select>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <h2>Drag and Drop Excel Files Here</h2>
+                    <p>or click to upload</p>
+                    <input type="file" id="fileInput" class="hidden-input" accept=".xlsx, .xls">
+                </div>
+            </div>
+            <div class="table-section">
+                <header>
+                    <h2>Extracted Soil Analysis Data</h2>
+                </header>
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+					<button id="saveButton">Submit Data</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+	<script src="script.js"></script>
+	</body>
+	</html>
