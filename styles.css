@@ -1,4 +1,4 @@
-  /* General Reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,15 +11,14 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto; /* Allow scrolling */
 }
 
 /* Header */
 header {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
+    padding: 15px;
     position: fixed;
     top: 0;
     left: 0;
@@ -27,72 +26,96 @@ header {
     z-index: 1000;
 }
 
+/* Navigation */
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: transparent;
+    padding: 0 15px;
+    max-width: 100%;
+    margin: 0 auto;
 }
-
+/* Logo styling */
 .header-logo {
-    height: 50px;
-    width: auto;
-    margin-right: 10px;
+    height: auto; /* Allows scaling with container */
+    max-height: 50px; /* Prevents logos from becoming too large */
+    width: auto; /* Keeps the aspect ratio */
     object-fit: contain;
+    margin-right: 10px;
 }
 
 .header-right-logo {
-    height: 50px;
-    width: auto;
-    margin-left: 10px;
+    height: auto; /* Allows scaling with container */
+    max-height: 50px; /* Prevents logos from becoming too large */
+    width: auto; /* Keeps the aspect ratio */
     object-fit: contain;
+    margin-left: 10px;
 }
+/* Adjusted Navigation Styles */
+nav {
+    display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Space between elements */
+    position: absolute; /* Position nav relative to the header */
+    right: 100px; /* Position 20px from the right */
+    top: 10; /* Align with the top of the header */
+	 
+}
+nav h2 {
+    font-size: 20px;
+    color: #000000;
+    margin-right: 10px; /* Add spacing after "Clients" */
+	hover:
+}
+
+nav select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    margin-right: 15px; /* Space between dropdown and the list */
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Align list items in a row */
+    gap: 15px; /* Space between links */
+    margin: 0; /* Remove extra margin */
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0; /* Remove default margins */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #56ab2f;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background-color and scaling */
+    padding: 10px 10px; /* Add padding for the links */
+    border-radius: 5px; /* Round the corners of the link */
+}
+
+nav ul li a:hover {
+    background-color: #D3D3D3; /* Change background color on hover */
+    transform: scale(0.5); /* Slightly enlarge the link */
+}
+
 
 /* Layout */
 .container {
     display: flex;
     position: fixed;
-    top: 80px; /* Account for the header height */
+    top: 80px; /* Account for header height */
     left: 0;
-    bottom: 0;
     right: 0;
-    overflow: hidden;
-}
-
-nav {
-    width: 250px;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
-nav h2 {
-    margin-bottom: 15px;
-}
-
-nav select {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    margin: 10px 0;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
+    bottom: 0;
+    max-width: 95%; /* Reduce container width */
+    margin: 0 auto;
+    overflow: auto; /* Allow scrolling within the container */
 }
 
 main {
@@ -102,7 +125,7 @@ main {
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    overflow: hidden;
+    overflow: auto; /* Allow scrolling inside main */
 }
 
 /* Upload Section */
@@ -139,17 +162,24 @@ main {
 .table-section {
     position: absolute;
     top: 200px; /* Adjust to position below fixed elements */
-    left: 0;
-    right: 0;
+    left: 5px;
+    right: 5px;
     bottom: 0;
-    overflow: auto;
-    padding: 20px;
-}
+    overflow: auto; /* Enable scrolling for the table */
+    padding: 10px;
+    background-color: #fff;
+	
+}	
 
+/* Table Styles */
 table {
     width: 100%;
+    max-width: calc(100% - 10px);
     border-collapse: collapse;
-    table-layout: auto; /* Allow columns to adjust dynamically */
+    table-layout: auto;
+    margin: 0 auto;
+    transform: scale(0.85);
+    transform-origin: top left;
 }
 
 table tr:nth-child(even) {
@@ -164,25 +194,38 @@ table th {
     color: #fff;
     border: 1px solid #ccc;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
+    font-size: 14px;
 }
 
 table td {
     border: 1px solid #ccc;
     text-align: center;
-    padding: 10px;
-    vertical-align: top;
-    white-space: nowrap; /* Prevent wrapping for dynamic adjustment */
+    padding: 3px;
     background-color: #f9f9f9;
+    font-size: 13px;
 }
-
 table td input {
     border: none;
     background: none;
     text-align: center;
     box-sizing: border-box; /* Ensure padding doesn't overflow the cell */
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: normal; /* Allow wrapping */
+    font-size: 12px; /* Reduce input font size */
 }
+.table-top {
+    position: fixed;
+    top: 80px; /* Account for the header height */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 95%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Ensure it stays above other elements */
+}
+
 
 /* Save Button */
 #saveButton {
@@ -204,11 +247,30 @@ table td input {
     transform: scale(1.05);
 }
 
+/* Clear Button */
+#clearButton {
+    position: fixed;
+    right: 180px;
+    bottom: 20px;
+    padding: 10px 20px;
+    background-color: #56ab2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#clearButton:hover {
+    background-color: #3d8b1e;
+    transform: scale(1.05);
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     nav {
         width: 100%;
-        height: auto;
     }
     .container {
         flex-direction: column;
